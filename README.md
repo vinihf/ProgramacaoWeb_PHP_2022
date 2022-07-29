@@ -4,4 +4,4 @@ Este repositório contém códigos de exemplos utilizados nas aulas de Programa�
 
 Os códigos são utilizados em conjunto com os [slides](https://docs.google.com/presentation/d/13EyRneqT9t8gFOCRzDcy74SeqxTCVq5RHpwCBiYrqts/edit?usp=sharing).
 
-https://img.shields.io/github/last-commit/vinihf/ProgramacaoWeb_PHP?style=for-the-badge
+![GitHub last commit](https://img.shields.io/github/last-commit/vinihf/ProgramacaoWeb_PHP?style=for-the-badge)
