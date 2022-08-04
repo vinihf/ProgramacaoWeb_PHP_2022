@@ -1,7 +1,5 @@
 <?php
-require_once __DIR__."\src\Classes\ContaCorrente.php";
-require_once __DIR__."\src\Classes\ContaPoupança.php";
-require_once __DIR__."\src\Classes\ContaBancaria.php";
+require_once __DIR__ . '/vendor/autoload.php';
 
 $cc = new \Classes\ContaCorrente(100.00,1000.00);
 echo $cc->getSaldo();

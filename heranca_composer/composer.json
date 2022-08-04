@@ -1,0 +1,15 @@
+{
+    "name": "vinicius/heranca_composer",
+    "authors": [
+        {
+            "name": "vhf"
+        }
+    ],
+    
+    "require": {},
+    "autoload": {
+        "psr-4": {
+             "Classes\\": "src/Classes"
+         }
+      }
+}

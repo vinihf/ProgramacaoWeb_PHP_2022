@@ -1,4 +1,7 @@
 <?php
+
+namespace Classes;
+
 class ContaBancaria{
 
     public function __construct(protected float $saldo){
