@@ -11,8 +11,9 @@ $p->setEmail("troquei-email@email.com");
 $p->save();
 
 //Pesquisando um registro
-$p2 = Pessoa::find(8);
+$p2 = Pessoa::find(7);
 echo $p2->getNome();
 
 //Deletando um registro
 $p2->delete();
+
