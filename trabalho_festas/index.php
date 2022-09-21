@@ -25,7 +25,7 @@ $festas = Festa::findall();
         echo "<td>{$festa->getNome()}</td>";
         echo "<td>{$festa->getEndereco()}</td>";
         echo "<td>{$festa->getCidade()}</td>";
-        //Formatação 
+        //Formatação da data para exibir como dia, mês e ano.
         $dataFormatada = new DateTime($festa->getData());
         echo "<td>{$dataFormatada->format('d/m/Y')}</td>";
         echo "<td>
