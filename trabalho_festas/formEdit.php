@@ -1,13 +1,13 @@
 <?php
-if(isset($_GET['id'])){
+if(isset($_GET['idFesta'])){
     require_once __DIR__."/vendor/autoload.php";
-    $pessoa = Pessoa::find($_GET['id']);
+    $festa = Festa::find($_GET['idFesta']);
 }
 if(isset($_POST['botao'])){
     require_once __DIR__."/vendor/autoload.php";
-    $pessoa = new Pessoa($_POST['nome'],$_POST['email']);
-    $pessoa->setId($_POST['id']);
-    $pessoa->save();
+    $festa = new Festa($_POST['nome'],$_POST['endereco'],$_POST['cidade'],$_POST['data']);
+    $festa->setIdFesta($_POST['idFesta']);
+    $festa->save();
     header("location: index.php");
 }
 ?>
@@ -17,17 +17,20 @@ if(isset($_POST['botao'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adiciona Contato</title>
+    <title>Edita Festa</title>
 </head>
 <body>
     <form action='formEdit.php' method='POST'>
         <?php
-            echo "Nome: <input name='nome' value='{$pessoa->getNome()}' type='text' required>";
-        ?>
-        <br>
-        <?php
-            echo "E-mail: <input name='email' value={$pessoa->getEmail()} type='email' required>";
-            echo "<input name='id' value={$pessoa->getId()} type='hidden'>";
+            echo "Nome: <input name='nome' value='{$festa->getNome()}' type='text' required>";
+            echo "<br>";
+            echo "Endereço: <input name='endereco' value='{$festa->getEndereco()}' type='text' required>";
+            echo "<br>";
+            echo "Cidade: <input name='cidade' value='{$festa->getCidade()}' type='text' required>";
+            echo "<br>";
+            echo "Data: <input name='data' value='{$festa->getData()}' type='date' required>";
+            echo "<br>";
+            echo "<input name='idFesta' value={$festa->getIdFesta()} type='hidden'>";
         ?>
         <br>
         <input type='submit' name='botao'>

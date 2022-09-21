@@ -2,7 +2,7 @@
 
 class Festa implements ActiveRecord{
 
-    private int $id;
+    private int $idFesta;
     
     public function __construct(
         private string $nome,
@@ -11,12 +11,12 @@ class Festa implements ActiveRecord{
         private string $data){
     }
 
-    public function setId(int $id):void{
-        $this->id = $id;
+    public function setIdFesta(int $idFesta):void{
+        $this->idFesta = $idFesta;
     }
 
-    public function getId():int{
-        return $this->id;
+    public function getIdFesta():int{
+        return $this->idFesta;
     }
 
     public function setNome(string $nome):void{
@@ -53,8 +53,8 @@ class Festa implements ActiveRecord{
 
     public function save():bool{
         $conexao = new MySQL();
-        if(isset($this->id)){
-            $sql = "UPDATE festas SET nome = '{$this->nome}' ,endereco = '{$this->endereco}',cidade = '{$this->cidade}',data = '{$this->data}' WHERE idFesta = {$this->id}";
+        if(isset($this->idFesta)){
+            $sql = "UPDATE festas SET nome = '{$this->nome}' ,endereco = '{$this->endereco}',cidade = '{$this->cidade}',data = '{$this->data}' WHERE idFesta = {$this->idFesta}";
         }else{
             $sql = "INSERT INTO festas (nome,endereco,cidade,data) VALUES ('{$this->nome}','{$this->endereco}','{$this->cidade}','{$this->data}')";
         }
@@ -63,16 +63,16 @@ class Festa implements ActiveRecord{
     }
     public function delete():bool{
         $conexao = new MySQL();
-        $sql = "DELETE FROM festas WHERE idFestas = {$this->idFesta}";
+        $sql = "DELETE FROM festas WHERE idFesta = {$this->idFesta}";
         return $conexao->executa($sql);
     }
 
-    public static function find($id):Festa{
+    public static function find($idFesta):Festa{
         $conexao = new MySQL();
-        $sql = "SELECT * FROM festas WHERE idFesta = {$id}";
+        $sql = "SELECT * FROM festas WHERE idFesta = {$idFesta}";
         $resultado = $conexao->consulta($sql);
         $p = new Festa($resultado[0]['nome'],$resultado[0]['endereco'],$resultado[0]['cidade'],$resultado[0]['data']);
-        $p->setId($resultado[0]['idFesta']);
+        $p->setIdFesta($resultado[0]['idFesta']);
         return $p;
     }
     public static function findall():array{
@@ -82,7 +82,7 @@ class Festa implements ActiveRecord{
         $festas = array();
         foreach($resultados as $resultado){
             $p = new Festa($resultado['nome'],$resultado['endereco'],$resultado['cidade'],$resultado['data']);
-            $p->setId($resultado['idFesta']);
+            $p->setIdFesta($resultado['idFesta']);
             $festas[] = $p;
         }
         return $festas;

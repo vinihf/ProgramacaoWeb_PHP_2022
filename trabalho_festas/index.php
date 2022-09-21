@@ -25,10 +25,12 @@ $festas = Festa::findall();
         echo "<td>{$festa->getNome()}</td>";
         echo "<td>{$festa->getEndereco()}</td>";
         echo "<td>{$festa->getCidade()}</td>";
-        echo "<td>{$festa->getData()}</td>";
+        //Formatação 
+        $dataFormatada = new DateTime($festa->getData());
+        echo "<td>{$dataFormatada->format('d/m/Y')}</td>";
         echo "<td>
-                <a href='formEdit.php?id={$festa->getId()}'>Editar</a>
-                <a href='excluir.php?id={$festa->getId()}'>Excluir</a> 
+                <a href='formEdit.php?idFesta={$festa->getIdFesta()}'>Editar</a>
+                <a href='excluir.php?idFesta={$festa->getIdFesta()}'>Excluir</a> 
              </td>";
         echo "</tr>";
     }
