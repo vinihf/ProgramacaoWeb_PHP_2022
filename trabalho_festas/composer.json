@@ -1,0 +1,14 @@
+{
+    "name": "vinicius/trabalho_festa",
+    "authors": [
+        {
+            "name": "vhf"
+        }
+    ],
+    "require": {},
+    "autoload":{
+        "psr-4": {
+            "":"src/"
+        }
+    }
+}
