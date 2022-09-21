@@ -11,6 +11,10 @@ class Pessoa implements ActiveRecord{
         $this->id = $id;
     }
 
+    public function getId():int{
+        return $this->id;
+    }
+
     public function setNome(string $nome):void{
         $this->nome = $nome;
     }
