@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    background: blue;
+}
+
+.bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    background: red;
+}
+
+input[type=search]{
+    width:40%;
+    line-height: 32px;
+    border-radius: 30;
+    font-size:22px;
+    padding:5px;
+}
