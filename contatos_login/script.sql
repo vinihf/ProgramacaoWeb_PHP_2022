@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `sistema_contatos`
+-- Banco de dados: `exemplo_contatos`
 --
-CREATE DATABASE IF NOT EXISTS `sistema_contatos` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `sistema_contatos`;
+CREATE DATABASE IF NOT EXISTS `exemplo_contatos` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `exemplo_contatos`;
 
 -- --------------------------------------------------------
 

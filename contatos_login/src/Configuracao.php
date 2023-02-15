@@ -2,5 +2,5 @@
     define("HOST","localhost");
     define("USUARIO","root");
     define("SENHA","");
-    define("BANCO","sistema_contatos");
+    define("BANCO","exemplo_contatos");
 ?>
